@@ -1,7 +1,12 @@
-# PAIR 
+const fs = require('fs');
+if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
+function convertToBool(text, fault = 'true') {
+    return text === fault ? true : false;
+}
+module.exports = {
 
-https://asitha.top
-
-# Heroku 
-
-https://dashboard.heroku.com/new?template=https://github.com/asitha9/new-
+SESSION_ID: process.env.SESSION_ID === undefined ? '𝙰𝚂𝙸𝚃𝙷𝙰-𝙼𝙳=32pQlDLS#EM2MbhJvScMPazpSfBf3MAlkrFxUzwuv-5rKwhdhFqI' : process.env.SESSION_ID,
+PORT: process.env.PORT === undefined ? "8000" : process.env.PORT,
+SESSION_NAME: process.env.PORT === undefined ? "asitha" : process.env.SESSION_NAME,
+POSTGRESQL_URL: process.env.POSTGRESQL_URL === undefined ? 'postgresql://postgres:𝙰𝚂𝙸𝚃𝙷𝙰-𝙼𝙳=D2wxlA6a#ecnZBr1u54ffmx4a4fr-lNPE7IN38Qn9dXrO1uQlgWQ.supabase.co:5432/postgres' : process.env.POSTGRESQL_URL,
+};
